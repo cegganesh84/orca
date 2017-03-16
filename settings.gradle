@@ -31,6 +31,7 @@ include "orca-extensionpoint",
   "orca-smoke-test",
   "orca-applications",
   "orca-spring-batch",
+  "orca-dynoq",
   "orca-pipelinetemplate",
   "orca-validation"
 

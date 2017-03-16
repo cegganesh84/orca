@@ -254,7 +254,7 @@ class TaskControllerSpec extends Specification {
       ]
     } as PipelineStage)
     objectMapper.readValue(response.contentAsString, Map).stages*.context == [
-      [value: "1", judgmentStatus: "stop", , lastModifiedBy: "anonymous"]
+      [value: "1", judgmentStatus: "stop", lastModifiedBy: "anonymous"]
     ]
     0 * _
   }

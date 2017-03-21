@@ -16,6 +16,7 @@
 
 package com.netflix.spinnaker.orca.controllers
 
+import java.time.Clock
 import com.netflix.spinnaker.orca.ActiveExecutionTracker
 import com.netflix.spinnaker.orca.ExecutionStatus
 import com.netflix.spinnaker.orca.front50.Front50Service
@@ -40,9 +41,6 @@ import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.security.access.prepost.PreFilter
 import org.springframework.web.bind.annotation.*
 import rx.schedulers.Schedulers
-
-import java.time.Clock
-
 import static java.time.ZoneOffset.UTC
 
 @RestController
@@ -62,10 +60,10 @@ class TaskController {
   @Autowired
   Collection<StageDefinitionBuilder> stageBuilders
 
-  @Autowired
+  @Autowired(required = false)
   Optional<ZombiePipelineCleanupAgent> zombiePipelineCleanupAgent
 
-  @Autowired
+  @Autowired(required = false)
   ActiveExecutionTracker activeExecutionTracker
 
   @Value('${tasks.daysOfExecutionHistory:14}')

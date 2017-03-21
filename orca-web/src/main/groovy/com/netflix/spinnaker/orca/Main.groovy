@@ -36,7 +36,6 @@ import com.netflix.spinnaker.orca.mine.config.MineConfiguration
 import com.netflix.spinnaker.orca.pipeline.model.PipelineStage
 import com.netflix.spinnaker.orca.web.config.WebConfiguration
 import com.netflix.spinnaker.orca.zombie.ZombiePipelineCleanupConfig
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration
 import org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration
@@ -52,7 +51,6 @@ import org.springframework.scheduling.annotation.EnableAsync
 @Configuration
 @EnableAsync
 @EnableAutoConfiguration(exclude = [BatchAutoConfiguration, GroovyTemplateAutoConfiguration])
-@EnableBatchProcessing(modular = true)
 @Import([
   PlatformComponents,
   WebConfiguration,
